@@ -49,8 +49,6 @@ check_intellij() {
 
 check_intellij
 
-echo "--------------------------------------------------"
-
 # Function to tap the HashiCorp repository
 tap_hashicorp() {
     echo "Tapping the HashiCorp repository..."
