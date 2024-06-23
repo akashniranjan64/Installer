@@ -183,6 +183,19 @@ check_helm_installed() {
 
 check_helm_installed
 
+check_docker_installed() {
+    if ! command -v docker &> /dev/null; then
+        echo "docker is not installed. Installing it now."
+        check_brew_installed
+
+        brew install --cask docker
+        docker version
+    else
+        echo "docker is already installed"
+    fi
+}
+check_docker_installed
+
 echo "INSTALL terraform_switch or tfenv MANUALLY as per your need"
 echo "INSTALL PYTHON MANUALLY"
 echo "INSTALL GCLOUD MANUALLY"
