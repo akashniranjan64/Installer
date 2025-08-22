@@ -196,6 +196,19 @@ check_docker_installed() {
 }
 check_docker_installed
 
+check_iterm_installed() {
+    if ! command -v iterm &> /dev/null; then
+        echo "docker is not installed. Installing it now."
+        check_brew_installed
+
+        brew install --cask iterm2
+        iterm2 version
+    else
+        echo "iterm2 is already installed"
+    fi
+}
+check_iterm_installed
+
 echo "INSTALL terraform_switch or tfenv MANUALLY as per your need"
 echo "INSTALL PYTHON MANUALLY"
 echo "INSTALL GCLOUD MANUALLY"
